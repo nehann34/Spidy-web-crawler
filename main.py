@@ -4,8 +4,8 @@ from spider import Spider
 from domain import*
 from general import*
 
-PROJECT_NAME ='edx'
-HOMEPAGE= 'https://www.edx.org/'
+PROJECT_NAME ='test-cplusplus'
+HOMEPAGE= 'http://www.cplusplus.com/doc/tutorial/'
 DOMAIN_NAME=get_domain_name(HOMEPAGE)
 QUEUE_FILE=PROJECT_NAME+'/queue.txt'
 CRAWLED_FILE=PROJECT_NAME+'/crawled.txt'
@@ -23,7 +23,7 @@ def work():
     while True:
           url=queue.get()
           Spider.crawl_page(threading.current_thread().name,url)
-          queue.task.done()    
+          queue.task_done()    
 
 
 
